@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ============== Color ============== */
+  --Main-Color: #f8f2ee;
+  --Second-Color: #000000cf;
+  /* ================================================== */
+  --Second-Background: #15bdc9;
+  --Third-Background-Circle: #193b65;
+  --Bg-Active: #27cfdb;
+  --Transition: 0.3s all;
+}
+* {
+  font-family: "Poppins", serif !important;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+@layer components {
+  .Main-Bg {
+    background-image: radial-gradient(circle, rgba(21, 189, 201, 1) 0%, rgba(25, 59, 101, 1) 100%);
+  }
+
+  .Main-Btn {
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--Main-Color);
+    border-radius: 25px;
+    text-transform: capitalize;
+    transition: var(--Transition);
+    gap: 0.3rem;
+    position: relative;
+    z-index: 1;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    -webkit-transition: var(--Transition);
+    -moz-transition: var(--Transition);
+    -ms-transition: var(--Transition);
+    -o-transition: var(--Transition);
+  }
+
+  @media (max-width: 768px) {
+    .Main-Btn {
+      padding: 0.4rem 0.7rem;
+    }
+  }
+
+  .Main-Btn:hover .Icon-Main-Btn {
+    transform: translatex(10px);
+    transition: 0.4s all;
+    -webkit-transition: 0.4s all;
+    -moz-transition: 0.4s all;
+    -ms-transition: 0.4s all;
+    -o-transition: 0.4s all;
+    -webkit-transform: translatex(10px);
+    -moz-transform: translatex(10px);
+    -ms-transform: translatex(10px);
+    -o-transform: translatex(10px);
+  }
+  .Main-Btn:hover .Icon-Main-Btn-Rtl {
+    transform: translatex(-10px);
+    transition: 0.4s all;
+    -webkit-transition: 0.4s all;
+    -moz-transition: 0.4s all;
+    -ms-transition: 0.4s all;
+    -o-transition: 0.4s all;
+    -webkit-transform: translatex(-10px);
+    -moz-transform: translatex(-10px);
+    -ms-transform: translatex(-10px);
+    -o-transform: translatex(-10px);
+  }
+  .Main-Btn::before {
+    content: "";
+    width: 0%;
+    height: 0%;
+    position: absolute;
+    left: 0px;
+    top: 0;
+    background-color: var(--Bg-Active);
+    border-radius: 25px;
+    z-index: -1;
+    transition: 0.4s all;
+    -webkit-transition: 0.4s all;
+    -moz-transition: 0.4s all;
+    -ms-transition: 0.4s all;
+    -o-transition: 0.4s all;
+  }
+  .Main-Btn-Rtl::before {
+    content: "";
+    width: 0%;
+    height: 0%;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    background-color: var(--Bg-Active);
+    border-radius: 25px;
+    z-index: -1;
+    transition: 0.4s all;
+    -webkit-transition: 0.4s all;
+    -moz-transition: 0.4s all;
+    -ms-transition: 0.4s all;
+    -o-transition: 0.4s all;
+  }
+  .Main-Btn:hover {
+    transform: translateY(-10px);
+    color: var(--Main-Color);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+  }
+  .Main-Btn:hover::before {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+  }
+  /* ====================== Element Flex ============================= */
+  .Flex-Center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: transparent; */
+  }
+  /* ======================= BackgroundColor================== */
+  .Bg-light {
+    background-color: var(--Main-Color);
+  }
+  .Bg-Dark {
+    background-color: var(--Third-Background-Circle);
+  }
+  .Bg-Second {
+    background-color: var(--Second-Background);
+  }
+  .Bg-Active {
+    background-color: var(--Bg-Active);
+  }
+
+  .Active-Color {
+    color: var(--Bg-Active);
+  }
+  /* ====================Text >> Color =============== */
+  .Main-Color {
+    color: var(--Main-Color);
+  }
+
+  .Second-Color {
+    color: var(--Second-Color);
+  }
+  /* ============== public======================= */
+  .Card-Light {
+    background-color: var(--Main-Color);
+    border-radius: 0.6rem;
+    padding: 0.5rem 1rem;
+  }
+  .Shadow-Lg {
+    box-shadow: 0px 0px 12px 0px #050505bf;
+    /* background-color: transparent; */
+  }
+  .Rounded-6 {
+    border-radius: 0.6rem;
+  }
+}
+
+/* ========================= */
+.Scroll-Top {
+  position: fixed;
+  bottom: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  color: #fefae0;
+  background-color: var(--Bg-Active);
+  z-index: 4;
+  right: 27px;
+  padding: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  scroll-behavior: smooth;
+  padding-top: 10px;
+}
+/* Container  */
+.container {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 991px) {
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* @media (max-width: 768px) {
+  .container {
+    padding-left:  !important;
+    padding-right: 30px !important;
+  }
+} */
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .main-btn {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 300px) {
+  .container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
